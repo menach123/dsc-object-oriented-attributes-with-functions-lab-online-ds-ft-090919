@@ -41,12 +41,17 @@ To start, open up the **school.py** file in your text editor of choices such as 
 
 ```python
 from school import School
+import numpy as np
 ```
 
 
 ```python
 school = School("Middletown High School")
+print(school.name)
 ```
+
+    Middletown High School
+    
 
 ## Updating the __init__ method
 
@@ -75,12 +80,13 @@ Now add a method `add_student` which takes 2 arguments: a student's full name an
 school = School("Middletown High School") #Again, you must reinstantiate since you've modified the class!
 school.add_student("Peter Piper", 12)
 school.roster #{"12": ["Peter Piper"]}
+
 ```
 
 
 
 
-    {12: ['Peter Piper']}
+    {'12': ['Peter Piper']}
 
 
 
@@ -109,10 +115,10 @@ school.roster # {9: ["Kelly Slater"], 10: ["Tony Hawk", "Ryan Sheckler"], 11: ["
 
 
 
-    {12: ['Peter Piper'],
-     9: ['Kelly Slater'],
-     10: ['Tony Hawk', 'Ryan Sheckler'],
-     11: ['Bethany Hamilton']}
+    {'12': ['Peter Piper'],
+     '9': ['Kelly Slater'],
+     '10': ['Tony Hawk', 'Ryan Sheckler'],
+     '11': ['Bethany Hamilton']}
 
 
 
@@ -130,14 +136,15 @@ school.add_student("Kelly Slater", 9)
 school.add_student("Tony Hawk", 10)
 school.add_student("Ryan Sheckler", 10)
 school.add_student("Bethany Hamilton", 11)
+
 #Testing out your new method:
 print(school.grade(10)) # ["Tony Hawk", "Ryan Sheckler"]
 print(school.grade(12)) # ["Peter Piper"]
 ```
 
-    ['Tony Hawk', 'Ryan Sheckler']
-    ['Peter Piper']
-
+    ['Tony Hawk', 'Ryan Sheckler', 'Tony Hawk', 'Ryan Sheckler']
+    ['Peter Piper', 'Peter Piper']
+    
 
 ### Method 3: `sort_roster()`
 Define a method called `sort_roster` that returns the school's roster where the strings in the student arrays are sorted alphabetically. For instance:
@@ -153,10 +160,10 @@ school.sort_roster()
 
 
 
-    {12: ['Peter Piper'],
-     9: ['Kelly Slater'],
-     10: ['Ryan Sheckler', 'Tony Hawk'],
-     11: ['Bethany Hamilton']}
+    {'9': ['Kelly Slater', 'Kelly Slater'],
+     '10': ['Tony Hawk', 'Ryan Sheckler', 'Tony Hawk', 'Ryan Sheckler'],
+     '11': ['Bethany Hamilton', 'Bethany Hamilton'],
+     '12': ['Peter Piper', 'Peter Piper']}
 
 
 
